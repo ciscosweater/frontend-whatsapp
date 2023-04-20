@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import { Background, CenterMessageContainer, ChatContainer, ChatHeader, ChatInput, ChatInputArea, ChatItem, ChatMessages, ChatMessagesArea, ChatOptions, ContactsList, Container, CurrentChat, CurrentChatContainer, CurrentChatInfo, CurrentChatTitle, ImageProfile, LastMessage, LeftMessageContainer, NeutralMessage, ReceivedMessage, RightMessageContainer, SendMessageIcon, SendedMessage, TitleChatContainer, TitleMessage } from './styles';
+import { Background, CenterMessageContainer, ChatContainer, ChatHeader, ChatInput, ChatInputArea, ChatItem, ChatMessages, ChatMessagesArea, ChatOptions, ContactsList, Container, CurrentChat, CurrentChatContainer, CurrentChatInfo, CurrentChatTitle, ImageProfile, LastMessage, LeftMessageContainer, LoginScreenButton, LoginScreenContainer, LoginScreenContent, LoginScreenInput, LoginScreenLogo, LoginScreenText, NeutralMessage, ReceivedMessage, RightMessageContainer, SendMessageIcon, SendedMessage, TitleChatContainer, TitleMessage } from './styles';
 import GroupImage from './assets/profissao-programador.jpg';
 import SendIcon from './assets/send.png';
+import WppLogo from './assets/whatsapplogo.png';
 import socket from 'socket.io-client';
 
 const io = socket('http://localhost:4000');
@@ -41,11 +42,14 @@ function App() {
 
   if(!joined){
     return (
-      <div>
-        <span>Digite seu nome</span>
-        <input value={name} onChange={(e) => setName(e.target.value)} />
-        <button onClick={() => handleJoin()} >Entrar</button>
-      </div>
+      <LoginScreenContainer>
+        <LoginScreenContent>
+          <LoginScreenLogo src={WppLogo} />
+          <LoginScreenText>Digite seu nome</LoginScreenText>
+          <LoginScreenInput value={name} onChange={(e) => setName(e.target.value)} />
+          <LoginScreenButton onClick={() => handleJoin()} >Entrar</LoginScreenButton>
+        </LoginScreenContent>
+      </LoginScreenContainer>
     );
   };
 
