@@ -1,5 +1,5 @@
 import { ChatHeader, CurrentChat, CurrentChatContainer, CurrentChatInfo, CurrentChatTitle, ImageProfile } from "./styles";
-import GroupImage from "../../assets/profissao-programador.jpg";
+import GroupImage from "../../assets/group-image.jpg";
 import { useEffect, useState } from "react";
 import socket from 'socket.io-client';
 
@@ -17,7 +17,7 @@ function CurrentHeader() {
             <CurrentChat>
                 <ImageProfile src={GroupImage} alt="" />
                 <CurrentChatContainer>
-                    <CurrentChatTitle>Networking Profissão Programador</CurrentChatTitle>
+                    <CurrentChatTitle>Chat Geral</CurrentChatTitle>
                     <CurrentChatInfo>
                         {usersList.map((user: any, index) => (
                             <span>{user.name}{index + 1 < usersList.length ? ', ' : ''}</span>

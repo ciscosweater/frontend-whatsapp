@@ -1,5 +1,5 @@
 import { ChatItem, ChatOptions, Container, ImageProfile, LastMessage, TitleChatContainer, TitleMessage } from "./styles";
-import GroupImage from '../../assets/profissao-programador.jpg';
+import GroupImage from '../../assets/group-image.jpg';
 import { useContext } from "react";
 import { ChatContext } from "../../contexts/chatContext";
 import { UserContext } from "../../contexts/userContext";
@@ -25,7 +25,7 @@ function ContactsList() {
             <ChatItem>
                 <ImageProfile src={GroupImage} alt="" />
                 <TitleChatContainer>
-                    <TitleMessage>Networking Profissão Programador</TitleMessage>
+                    <TitleMessage>Chat Geral</TitleMessage>
                     {lastMessage && (
                         <LastMessage>
                             {lastMessage ? `${lastMessage.name ? `${lastMessage.name}: ` : ''}${lastMessage.message}` : 'Sem mensagens.'}
